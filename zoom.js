@@ -37,7 +37,7 @@
   }
 
   // This does the work.
-  function performChatAction(button) {
+  function window.performChatAction(button) {
     console.log('Chat Message Clicked!');
     // This is brittle...lol.
     let msgText = button.nextSibling.textContent;
