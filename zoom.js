@@ -1,4 +1,5 @@
 (function setupZoom() {
+  console.log('Setup Buttons loaded');
   // Boilerplate mutationobserver code
   // target element that we will observe
   const target = document.body;
@@ -27,6 +28,7 @@
   // Looks for new Zoom Chat messages to add a button to.
   // NOT at all optimized w/MutationObserver.
   function processDOMUpdate() {
+    console.log('Processing DOM updates');
     $('.chat-item__chat-info-header').filter((_, el) => !$(el).attr('button-added')).each((_, el) => {
       $(el).attr('button-added', true).after(
         '<button class="btn btn-default" onclick=performChatAction(this)>Do Thing</button>'
@@ -41,4 +43,7 @@
     let msgText = button.nextSibling.textContent;
     alert(`The message is: ${msgText}`);
   }
+
+  // Call Initially to capture existing messages.
+  processDOMUpdate();
 })();
