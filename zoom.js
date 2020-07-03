@@ -37,11 +37,12 @@
   }
 
   // This does the work.
-  function window.performChatAction(button) {
+  window.performChatAction = function (button) {
     console.log('Chat Message Clicked!');
     // This is brittle...lol.
     let msgText = button.nextSibling.textContent;
     alert(`The message is: ${msgText}`);
+    // TODO: Update the height so the text still displays?
   }
 
   // Call Initially to capture existing messages.
